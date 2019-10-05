@@ -109,11 +109,11 @@ function MM_validateForm() { //v4.0
 //-->
 //<!-- Function to calculate Total Freight-->//
 function calc() {
-a1=document.getElementById("Weight").value;
-b1=document.getElementById("Distance").value;
-c1=document.getElementById("Qnty").value;
-d1=(a1*b1*c1);
-document.getElementById("Totalfreight").innerHTML=d1;
+var a1=parseInt(document.getElementById("Weight").value);
+var b1=parseInt(document.getElementById("Distance").value);
+var c1=parseInt(document.getElementById("Qnty").value);
+var d1=document.getElementById("Totalfreight");
+d1.value= a1*b1*c1;
 }
 </script>
 </head>
@@ -522,12 +522,12 @@ function getSelected(opt)
           <tr>
             <td class="TrackMediumBlue" align="right">Weight : </td>
             <td>&nbsp;</td>
-            <td><input id="Weight" size="10" maxlength="10" name="Weight">
+            <td><input id="Weight" size="10" maxlength="10" name="Weight" onKeyUp="calc()">
               (kg)</td>
           </tr>
           <td class="TrackMediumBlue" align="right">Distance : </td>
           <td>&nbsp;</td>
-          <td><input id="Distance" size="10" maxlength="10" name="Distance">
+          <td><input id="Distance" size="10" maxlength="10" name="Distance" onKeyUp="calc()">
               (km)</td>
           </tr>
           <tr>
@@ -538,7 +538,7 @@ function getSelected(opt)
           <tr>
             <td class="TrackMediumBlue" align="right">Qnty  :</td>
             <td>&nbsp;</td>
-            <td><input name="Qnty" id="Qnty" maxlength="10" size="20" type="TEXT"></td>
+            <td><input name="Qnty" id="Qnty" maxlength="10" size="20" type="TEXT" onKeyUp="calc()"></td>
           </tr>
           <tr>
             <td class="TrackMediumBlue" align="right">Booking Mode :</td>
